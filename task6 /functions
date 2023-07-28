@@ -1,0 +1,57 @@
+// 6.1 function 1 Python
+def palindrome_or_reverse():‎
+‎    word = input("Enter a word: ")‎
+‎    if word == word[::-1]:‎
+‎        print("The word is a palindrome.")‎
+‎    else:‎
+‎        print("The word is not a palindrome.")‎
+‎        print("The word in reverse order is:", word[::-1])‎
+
+// 6.2 function 2 Javascript
+
+const arr = [1, 2, 3, 4, ..., 44, 45]; // array of first 45 numbers with one missing
+
+function findMissingNumber(arr) {‎
+‎  const n = arr.length + 1; // total number of integers, including the missing one
+‎  const sum = (n * (n + 1)) / 2; // sum of all integers from 1 to n
+‎  const arrSum = arr.reduce((acc, cur) => acc + cur, 0); // sum of all integers in the array
+‎  return sum - arrSum; // the missing integer is the difference between the sum of 1 to n and ‎the sum of the array
+‎}‎
+
+const missingNumber = findMissingNumber(arr);‎
+console.log("The missing number is:", missingNumber);‎
+
+// 6.3 function 3  Javascripts
+function myDigitalClock() {‎
+‎  var date = new Date();‎
+‎  var hours = date.getHours(); // 0 - 23‎
+‎  var minutes = date.getMinutes(); // 0 - 59‎
+‎  var seconds = date.getSeconds(); // 0 - 59‎
+‎  var zone = "AM";‎
+
+‎  // Convert hours from 24-hour to 12-hour format and determine AM/PM
+‎  if (hours == 0) {‎
+‎    hours = 12;‎
+‎  } else if (hours > 12) {‎
+‎    hours = hours - 12;‎
+‎    zone = "PM";‎
+‎  }‎
+
+‎  // Add leading zeros to minutes and seconds if necessary‎
+‎  if (minutes < 10) {‎
+‎    minutes = "0" + minutes;‎
+‎  }‎
+‎  if (seconds < 10) {‎
+‎    seconds = "0" + seconds;‎
+‎  }‎
+
+‎  // Display the time in the format "hh:mm:ss AM/PM"‎
+‎  var time = hours + ":" + minutes + ":" + seconds + " " + zone;‎
+‎  console.log(time);‎
+
+‎  // Update the clock every second‎
+‎  setTimeout(myDigitalClock, 1000);‎
+‎}‎
+
+‎// Call the function to start the clock‎
+myDigitalClock();‎
